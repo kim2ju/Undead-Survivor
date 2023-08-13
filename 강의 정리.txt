@@ -32,3 +32,13 @@
   - Control Type: 값의 형식을 결정
   - Interactions: 인풋의 호출 타이밍 지정
   - Processors: 인풋의 값을 후보정(ex. Normalize)
+
+4. 2D 셀 애니메이션 제작하기
+- LateUpdate: 프레임이 종료되기 전 실행되는 생명주기 함수
+- 셀 애니메이션: 여러 장의 이미지를 순차적으로 보여주는 방식
+- Animator: 애니메이션을 상태로 관리하는 컴포넌트(애니메이션 생성 시 자동으로 생성)
+  - 노란색 상태: 게임 실행 시 가장 먼저 실행되는 상태
+  - Duration: 부드럽게 전환하는 역할: 셀 애니메이션에서는 최소화
+  - 즉시 상태 변경을 위해 Has Exit Time 체크 해제
+  - 반복할 필요가 없다면 애니메이션 에셋의 Loop Time 체크 해제
+- Animator Override Controller: 애니메이션만 덮어 씌우는 에셋 (Animator 복사해서 사용하는 느낌)
