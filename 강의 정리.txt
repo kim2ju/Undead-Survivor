@@ -21,6 +21,14 @@
   - 1. 힘을 준다: rigid.AddForce(inputVec);
   - 2. 속도 제어: rigid.velocity = inputVec;
   - 3. 위치 이동: rigid.MovePosition(rigid.position + inputVec);
-- normalized: 벡터 값의 크기가 1이 되도록 좌표가 수정된 값
+- normalized: 벡터 값의 크기가 1이 되도록 좌표가 수정된 값(대각선 이동: 루트2 -> 1로 변경)
 - fixedDeltaTime: 물리 프레임 하나가 소비한 시간
 - Input.GetAxis는 -1 ~ 1의 값을 가지고 Input.GetAxisRaw는 -1, 0, 1의 값을 가진다.
+
+3. 새로운 인풋시스템 적용하기
+- Window -> Package Manager -> Packages: Unity Registry -> Input System install
+- Player 객체에서 Player Input 컴포넌트 추가 후 input action 생성
+  - Action Type: 버튼 클릭인지, 값을 내보내는 것인지 구분
+  - Control Type: 값의 형식을 결정
+  - Interactions: 인풋의 호출 타이밍 지정
+  - Processors: 인풋의 값을 후보정(ex. Normalize)
