@@ -1,0 +1,26 @@
+1. 2D 오브젝트 만들기
+- Sprites
+  - Sprite Mode => Multiple
+  - Pixels Per Unit: 하나의 네모칸에 몇 pixel이 들어갈지 => 주 캐릭터의 실제 크기로 설정
+  - Filter Mode => Point(필터 X)
+  - Comporession: 픽셀 게임에서는 압축 불필요 => None
+  - Slice할 때는 Grid By Cell size로 정확하게
+  - Apply할 때 각 Sprite의 이름을 지정해서 알기 쉽게 하자
+
+- 유니티 => 컴포넌트 기반 엔진 = 게임 객체를 컴포넌트로 구성
+- Sprite Renderer: 게임상에 스프라이트를 그리는 컴포넌트
+- Rigidbody: 물리 영향을 받는 컴포넌트(ex. 중력, 충돌 속력)
+- Collider: 물리적인 충돌 면을 결정하는 컴포넌트
+
+2. 플레이어 이동 구현하기
+- MonoBehaviour: 게임 로직 구성에 필요한 것들을 가진 클래스
+- Update: 하나의 프레임마다 한 번씩 호출되는 생명주기 함수
+- Awake: 시작할 때 한 번만 실행되는 생명주기 함수
+- FixedUpdate: 물리 연산 프레임마다 호출되는 생명주기 함수
+- inputVec 값에 따라 움직이게 하는 방법:
+  - 1. 힘을 준다: rigid.AddForce(inputVec);
+  - 2. 속도 제어: rigid.velocity = inputVec;
+  - 3. 위치 이동: rigid.MovePosition(rigid.position + inputVec);
+- normalized: 벡터 값의 크기가 1이 되도록 좌표가 수정된 값
+- fixedDeltaTime: 물리 프레임 하나가 소비한 시간
+- Input.GetAxis는 -1 ~ 1의 값을 가지고 Input.GetAxisRaw는 -1, 0, 1의 값을 가진다.
