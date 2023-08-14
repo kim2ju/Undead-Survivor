@@ -11,3 +11,13 @@
 - 컴포넌트의 비활성화는 .enabled = false;
 - rigidbody의 물리적 비활성화는 .simulated = false
 - Header: 인스펙터의 속성들을 이쁘게 구분시켜주는 타이틀
+
+12. HUD 제작하기
+- 유저 인터페이스(GUI)는 스크린 공간에 배치
+- RectTransform: 스크린 전용 Transform 역할 컴포넌트
+- Render Mode
+  - Screen-Overlay: 스크린에 그대로 얹는 형태
+  - Screen-Camera: 스크린을 카메라에 맞추는 형태
+  - World Space: Game Object처럼 월드 공간에 배치하는 형태
+- 어느 해상도에서나 크기를 유지하는 것이 UI의 포인트 => UI Scale Mode: Scale With Screen Size
+- WorldToScreenPoint: 월드 상의 오브젝트 위치를 스크린 좌표로 변환
