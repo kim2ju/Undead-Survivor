@@ -13,3 +13,7 @@
 - Instantiate: 원본 오브젝트를 복제하여 장면에 생성하는 함수
 - OnEnable: 스크립트가 활성화될 때 호출되는 이벤트 함수
 - GetComponentsInChildren<Transform>을 하면 자기 자신의 Transform도 포함되니 주의해야 한다.
+
+8. 소환 레벨 적용하기
+- 하나의 스크립트 내에서 2개의 클래스 선언이 가능하다.
+- 직렬화(Serialization): 객체를 저장 혹은 전송하기 위해 변환 => 인스펙터에서 초기화가 가능해짐
