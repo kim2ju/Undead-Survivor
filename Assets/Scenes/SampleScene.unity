@@ -154,6 +154,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefabs:
   - {fileID: 6392578843087327760, guid: 24be49a94b12cbc48a60b1dfd435577d, type: 3}
+  - {fileID: 7036235424219794935, guid: 43c37bae532fde045a92df133f192654, type: 3}
 --- !u!4 &19332771
 Transform:
   m_ObjectHideFlags: 0
@@ -9064,7 +9065,7 @@ GameObject:
   - component: {fileID: 509939705}
   - component: {fileID: 509939704}
   m_Layer: 0
-  m_Name: Grid
+  m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14128,6 +14129,7 @@ Transform:
   - {fileID: 972140229}
   - {fileID: 239783069}
   - {fileID: 848679688}
+  - {fileID: 1964101017}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1242284144
@@ -18595,6 +18597,55 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1964101016
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1964101017}
+  - component: {fileID: 1964101018}
+  m_Layer: 0
+  m_Name: Weapon 0
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1964101017
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1964101016}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1242284143}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1964101018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1964101016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5720b1319b39c694c8ebfefe7499856d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: 0
+  prefabId: 1
+  damage: 11
+  count: 2
+  speed: 0
 --- !u!1 &2056433719
 GameObject:
   m_ObjectHideFlags: 0
@@ -18666,5 +18717,5 @@ SceneRoots:
   - {fileID: 619394802}
   - {fileID: 1947215953}
   - {fileID: 19332771}
-  - {fileID: 1242284143}
   - {fileID: 509939705}
+  - {fileID: 1242284143}
