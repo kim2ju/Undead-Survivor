@@ -1,0 +1,13 @@
+11. 타격감 있는 몬스터 처치 만들기
+- 보통 앞에 I가 붙어있으면 인터페이스이다.
+- Coroutine: 생명 주기와 비동기처럼 실행되는 함수
+  - IEnumerator: 코루틴만의 반환형 인터페이스
+  - yield: 코루틴의 반환 키워드
+    - yield return null; // 1 프레임 쉬기
+    - yield return new WaitForSeconds(2f); // 2초 쉬기
+      - new를 계속 쓰면 좋지 않기 때문에 따로 빼준다.
+  - StartCoroutine("함수") 또는 StartCoroutine(함수())으로 실행
+- GetCurrentAnimatorStateInfo: 현재 상태 정보를 가져오는 함수
+- 컴포넌트의 비활성화는 .enabled = false;
+- rigidbody의 물리적 비활성화는 .simulated = false
+- Header: 인스펙터의 속성들을 이쁘게 구분시켜주는 타이틀
