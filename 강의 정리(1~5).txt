@@ -68,4 +68,3 @@
   - Follow => Player: 카메라가 Player를 따라 이동
   - Update Method => Fixed Update로 수정
 - Tilemap의 Order in Layer 낮추면 캐릭터 그림자 잘 보임
-
