@@ -42,3 +42,30 @@
   - 즉시 상태 변경을 위해 Has Exit Time 체크 해제
   - 반복할 필요가 없다면 애니메이션 에셋의 Loop Time 체크 해제
 - Animator Override Controller: 애니메이션만 덮어 씌우는 에셋 (Animator 복사해서 사용하는 느낌)
+
+5. 무한 맵 이동
+ - Window -> 2D -> Tile Palette, Create -> 2D -> Tiles -> Rule Tile
+  - Rule Tile: 인접한 타일에 따라 이미지가 정해지는 타일
+  - Tiling Rules의 Output을 Random으로 할 수 있다.
+  - Tiling Rules의 Noise를 조절하여 원하는 형태의 타일맵을 제작할 수 있다.
+  - 이렇게 만든 Rule Tile을 Tile Palette에 적용
+- Hierarchy -> 2D object -> TileMap -> Rectangular
+- Composite Collider 2D: 타일마다 나눠진 형태를 하나로 합치는 컴포넌트
+- Tilemap Collider 2D => Used By Composite
+- Player와 Tile이 충돌하지 않도록 Composite Collider에서 Is Trigger 체크
+- 자동으로 생성되는 Rigidbody에서는 type을 static으로 변경
+- Game Manager 스크립트를 통해 Player의 정보를 Reposition에 전달
+- static: 정적으로 사용하겠다는 키워드. 바로 메모리에 얹어버림. Inspector에 나타나지 않는다.
+- Mathf.Abs: 절댓값 함수
+- Translate: 지정된 값만큼 현재 위치에서 이동
+- Pixel perfect Camera: 픽셀 깨지는 걸 막는 컴포넌트
+  - Pixel Per Unit: 스프라이트에서 사용하는 수치와 맞추기
+  - Game 화면에 오류가 뜨면 Game 창 크기 짝수로 조절
+  - Reference Resolution: 카메라 크기 계산을 위한 참고 해상도
+  - Tilemap 크기, Area 크기, 재배치 거리는 카메라 크기와 비슷하게
+- Package Manager -> Chinemachine 설치: 카메라 조절
+  - Virtual Camera: Main Camera의 카메라 감독 역할
+  - Follow => Player: 카메라가 Player를 따라 이동
+  - Update Method => Fixed Update로 수정
+- Tilemap의 Order in Layer 낮추면 캐릭터 그림자 잘 보임
+
