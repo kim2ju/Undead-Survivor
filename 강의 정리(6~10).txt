@@ -21,3 +21,8 @@
 9. 회전하는 근접무기 구현
 - <Transform>.parent를 통해 부모 변경 가능
 - rotate의 초기값: Quaternion.identity
+
+10. 자동 원거리 공격 구현
+- Layer: 물리, 시스템 상으로 구분짓기 위한 요소
+- Physics2D.CircleCastAll(캐스팅 시작 위치, 원의 반지름, 캐스팅 방향, 캐스팅 길이, 대상 레이어)
+- Quaternion.FromToRotation: 지정된 축을 중심으로 목표를 향해 회전하는 함수
