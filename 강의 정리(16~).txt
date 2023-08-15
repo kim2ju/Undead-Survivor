@@ -1,2 +1,5 @@
 16. 게임 시작과 종료
 - Button의 OnClick에서 스크립트가 없어도 SetActive 등은 수정 가능
+
+17. 플레이 캐릭터 선택
+- 전체에 적용할 때 public static {get {return}}을 사용하면 좋다.
