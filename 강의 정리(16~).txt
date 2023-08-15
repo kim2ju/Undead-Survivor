@@ -1,0 +1,2 @@
+16. 게임 시작과 종료
+- Button의 OnClick에서 스크립트가 없어도 SetActive 등은 수정 가능
