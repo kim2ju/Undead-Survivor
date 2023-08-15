@@ -3,3 +3,9 @@
 
 17. 플레이 캐릭터 선택
 - 전체에 적용할 때 public static {get {return}}을 사용하면 좋다.
+
+18. 캐릭터 해금 시스템
+- PlayerPrefs: 간단한 저장 기능을 제공하는 유니티 제공 클래스
+- HasKey 함수로 데이터 유무 체크 후 초기화 실행
+- Edit -> Clear All PlayersPrefs 메뉴로 데이터 지우고 테스트
+- WaitForSecondsRealtime: timeScale의 영향을 받지 않는다.
