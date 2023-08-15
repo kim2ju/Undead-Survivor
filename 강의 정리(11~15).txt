@@ -27,3 +27,6 @@
 - CreateAssetMenu: 커스텀 메뉴를 생성하는 속성
 - AddComponent<T>: 게임 오브젝트에 T 컴포넌트를 추가하는 함수
 - BroadcastMessage: 특정 함수 호출을 모든 자식에게 방송하는 함수
+
+14. 플레이어 무기 장착 표현하기
+- 비활성화된 오브젝트는 기본적으로 GetComponent에서 제외된다. => 파라미터에 true를 넣으면 비활성화도 포함된다.
