@@ -17,3 +17,7 @@
 - 열거형 데이터 대응하는 숫자 지정 가능
 - Audio HighPass Filter: 주파수 높은 것만 들린다.
   - Listner Effect 계열
+
+20. 로직 보완하기
+
+21. 
