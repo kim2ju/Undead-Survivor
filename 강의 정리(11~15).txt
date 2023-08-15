@@ -21,3 +21,9 @@
   - World Space: Game Object처럼 월드 공간에 배치하는 형태
 - 어느 해상도에서나 크기를 유지하는 것이 UI의 포인트 => UI Scale Mode: Scale With Screen Size
 - WorldToScreenPoint: 월드 상의 오브젝트 위치를 스크린 좌표로 변환
+
+13. 능력 업그레이드 구현
+- ScriptableObject: 다양한 데이터를 저장하는 에셋
+- CreateAssetMenu: 커스텀 메뉴를 생성하는 속성
+- AddComponent<T>: 게임 오브젝트에 T 컴포넌트를 추가하는 함수
+- BroadcastMessage: 특정 함수 호출을 모든 자식에게 방송하는 함수
