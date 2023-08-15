@@ -20,4 +20,10 @@
 
 20. 로직 보완하기
 
-21. 
+21. 모바일 빌드하기
+- 종료: Application.Quit() => 에디터에서는 동작 확인 불가능
+- VSync Count -> Every V Blank: 안드로이드에서 작동 안됨 => Dont't Sync로 설정
+- Global Volume 생성 -> New 버튼으로 볼륨 프로파일 에셋 추가 -> Add Overrider로 후처리 추가하기
+  - Bloom: 빛 번짐 효과
+  - Film Grain: 필름 노이즈 효과
+  - Vignette: 모서리 음영 처리 효과
