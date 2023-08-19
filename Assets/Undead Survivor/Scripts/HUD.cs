@@ -5,8 +5,10 @@ using UnityEngine.UI;
 
 public class HUD : MonoBehaviour
 {
-    public enum InfoType { Exp, Level, Kill, Time, Health }
+    public enum InfoType { Exp, Level, Kill, Time, Health, HighScore }
     public InfoType type;
+
+    int HighScore;
 
     Text myText;
     Slider mySlider;
@@ -15,6 +17,11 @@ public class HUD : MonoBehaviour
     {
         myText = GetComponent<Text>();
         mySlider = GetComponent<Slider>();
+
+        if (PlayerPrefs.HasKey("HighScore"))
+        {
+            HighScore = PlayerPrefs.GetInt("HighScore");
+        }
     }
 
     void LateUpdate()
@@ -30,7 +37,7 @@ public class HUD : MonoBehaviour
                 myText.text = string.Format("Lv.{0:F0}", GameManager.instance.level);
                 break;
             case InfoType.Kill:
-                myText.text = string.Format("{0:F0}", GameManager.instance.kill);
+                myText.text = string.Format("{0:D4}", GameManager.instance.kill);
                 break; 
             case InfoType.Time:
                 float remainTime = GameManager.instance.maxGameTime - GameManager.instance.gameTime;
@@ -42,6 +49,17 @@ public class HUD : MonoBehaviour
                 float curHealth = GameManager.instance.health;
                 float maxHealth = GameManager.instance.maxHealth;
                 mySlider.value = curHealth / maxHealth;
+                break;
+            case InfoType.HighScore:
+                if (GameManager.instance.kill > HighScore)
+                {
+                    myText.text = string.Format("최고기록: {0:D4}", GameManager.instance.kill);
+                    myText.color = Color.red;
+                }
+                else
+                {
+                    myText.text = string.Format("최고기록: {0:D4}", HighScore);
+                }
                 break;
         }
     }

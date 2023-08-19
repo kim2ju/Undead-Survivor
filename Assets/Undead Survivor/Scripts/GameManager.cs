@@ -63,6 +63,9 @@ public class GameManager : MonoBehaviour
         uiResult.Lose();
         Stop();
 
+        if (GameManager.instance.kill > PlayerPrefs.GetInt("HighScore"))
+            PlayerPrefs.SetInt("HighScore", GameManager.instance.kill);
+
         AudioManager.instance.PlayBgm(false);
         AudioManager.instance.PlaySfx(AudioManager.Sfx.Lose);
     }
@@ -75,6 +78,9 @@ public class GameManager : MonoBehaviour
         uiResult.gameObject.SetActive(true);
         uiResult.Win();
         Stop();
+
+        if (GameManager.instance.kill > PlayerPrefs.GetInt("HighScore"))
+            PlayerPrefs.SetInt("HighScore", GameManager.instance.kill);
 
         AudioManager.instance.PlayBgm(false);
         AudioManager.instance.PlaySfx(AudioManager.Sfx.Win);
