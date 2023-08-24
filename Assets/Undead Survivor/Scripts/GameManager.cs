@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     public int maxHealth = 100;
     public int level;
     public int kill;
+    public int highScore;
     public int exp;
     public int[] nextExp = { 10, 30, 60, 100, 150, 210, 280, 360, 450, 600 };
     [Header("# Game Object")]
@@ -30,6 +31,12 @@ public class GameManager : MonoBehaviour
     {
         instance = this;
         Application.targetFrameRate = 60;
+
+        if (!PlayerPrefs.HasKey("HighScore"))
+        {
+            PlayerPrefs.SetInt("HighScore", 0);
+        }
+        highScore = PlayerPrefs.GetInt("HighScore");
     }
 
     public void GameStart(int id)
@@ -63,8 +70,7 @@ public class GameManager : MonoBehaviour
         uiResult.Lose();
         Stop();
 
-        if (GameManager.instance.kill > PlayerPrefs.GetInt("HighScore"))
-            PlayerPrefs.SetInt("HighScore", GameManager.instance.kill);
+        SaveScore();
 
         AudioManager.instance.PlayBgm(false);
         AudioManager.instance.PlaySfx(AudioManager.Sfx.Lose);
@@ -79,8 +85,7 @@ public class GameManager : MonoBehaviour
         uiResult.Win();
         Stop();
 
-        if (GameManager.instance.kill > PlayerPrefs.GetInt("HighScore"))
-            PlayerPrefs.SetInt("HighScore", GameManager.instance.kill);
+        SaveScore();
 
         AudioManager.instance.PlayBgm(false);
         AudioManager.instance.PlaySfx(AudioManager.Sfx.Win);
@@ -137,5 +142,13 @@ public class GameManager : MonoBehaviour
         isLive = true;
         Time.timeScale = 1;
         uiJoy.localScale = Vector3.one;
+    }
+
+    public void SaveScore()
+    {
+        if (kill > highScore)
+        {
+            PlayerPrefs.SetInt("HighScore", kill);
+        }
     }
 }

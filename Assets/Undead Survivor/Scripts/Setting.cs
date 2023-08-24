@@ -26,17 +26,13 @@ public class Setting : MonoBehaviour
 
     public void GoMain()
     {
-        if (GameManager.instance.kill > PlayerPrefs.GetInt("HighScore"))
-            PlayerPrefs.SetInt("HighScore", GameManager.instance.kill);
-
+        GameManager.instance.SaveScore();
         SceneManager.LoadScene(0);
     }
 
     public void Quit()
     {
-        if (GameManager.instance.kill > PlayerPrefs.GetInt("HighScore"))
-            PlayerPrefs.SetInt("HighScore", GameManager.instance.kill);
-
+        GameManager.instance.SaveScore();
         GameManager.instance.GameQuit();
     }
 }

@@ -8,8 +8,6 @@ public class HUD : MonoBehaviour
     public enum InfoType { Exp, Level, Kill, Time, Health, HighScore }
     public InfoType type;
 
-    int HighScore;
-
     Text myText;
     Slider mySlider;
 
@@ -17,11 +15,6 @@ public class HUD : MonoBehaviour
     {
         myText = GetComponent<Text>();
         mySlider = GetComponent<Slider>();
-
-        if (PlayerPrefs.HasKey("HighScore"))
-        {
-            HighScore = PlayerPrefs.GetInt("HighScore");
-        }
     }
 
     void LateUpdate()
@@ -51,14 +44,14 @@ public class HUD : MonoBehaviour
                 mySlider.value = curHealth / maxHealth;
                 break;
             case InfoType.HighScore:
-                if (GameManager.instance.kill > HighScore)
+                if (GameManager.instance.kill > GameManager.instance.highScore)
                 {
                     myText.text = string.Format("최고기록: {0:D4}", GameManager.instance.kill);
                     myText.color = Color.red;
                 }
                 else
                 {
-                    myText.text = string.Format("최고기록: {0:D4}", HighScore);
+                    myText.text = string.Format("최고기록: {0:D4}", GameManager.instance.highScore);
                 }
                 break;
         }
